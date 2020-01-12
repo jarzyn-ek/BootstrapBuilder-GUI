@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Prerequisites
 
-`node` and `npm` installed
+`node`, `npm` and `ng-cli` installed
 
 Mandatory `npm install` after checkout
 
