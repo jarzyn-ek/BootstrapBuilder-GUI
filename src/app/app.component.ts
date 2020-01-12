@@ -83,14 +83,22 @@ export class AppComponent implements OnInit {
       return;
     }
 
+    const formData = {
+      title: this.form.get('title').value,
+      header: this.form.get('header').value ? true : false,
+      headerType: this.form.get('headerType').value,
+      footer: this.form.get('footer').value ? true : false,
+      metaTags: this.form.get('metaTags').value
+    };
+
     this.http
       .post(
         environment.apiUrl,
+        JSON.stringify(formData),
         {
-          input: JSON.stringify(this.form.value),
-          metaTags: this.f.metaTags.value
-        },
-        {
+          headers: {
+            "Content-Type": "application/json"
+          },
           responseType: "text"
         }
       )
